@@ -1,0 +1,203 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+    background-color: #0f0f0f;
+    color: #ccc;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    user-select: none;
+    cursor: default;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    -webkit-app-region: no-drag;
+}
+
+header {
+    margin-top: 0;
+    position: absolute;
+    font-size: 11px;
+    height: 25px;
+    width: 100%;
+    background-color: #181818;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #4676d7;
+    -webkit-app-region: drag;
+}
+
+#title {
+    padding-left: 5px;
+}
+
+a {
+    color: #949494;
+    text-decoration: none;
+    padding-right: 5px;
+    cursor: default;
+    -webkit-app-region: no-drag;
+}
+a:hover {
+  color: snow;
+}
+
+
+main {
+    padding: 1rem;
+    flex: 1;
+    overflow-y: auto; /* Scroll apenas no conteúdo principal, não no body */
+}
+
+.container {
+    display: block;
+    column-count: 2;
+    column-gap: 10px;
+    height: 100%; /* O container ocupa toda a altura disponível do body (420px - padding) */
+    width: 100%; /* O container ocupa toda a largura disponível do body (490px - padding) */
+    box-sizing: border-box; /* Garante que padding seja incluído */
+    padding-top: 10px; /* Padding superior como na imagem */
+    margin-top: 10px;
+    -webkit-app-region: drag;
+    overflow-y: auto;
+}
+
+.panel {
+    break-inside: avoid-column;
+    background-color: #181818;
+    border: 1px solid #222222;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%; /* O painel ocupa 100% da largura de sua coluna */
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    -webkit-app-region: no-drag;
+}
+
+.panel select, .panel input[type="range"] {
+    margin-left: auto;
+    background-color: #0f0f0fa9;
+    border-color: #222222;
+    width: 100%;
+    border: none;
+    color: #ddd;
+    padding: 2px 4px;
+    font-size: 12px;
+    outline: transparent;
+}
+
+.panel input[type="range"] {
+    flex: 1;
+    margin-left: 10px;
+}
+
+.section-title {
+    font-size: 12px;
+    color: #888;
+    border-bottom: 1px solid #333;
+    padding-bottom: 4px;
+}
+
+label.checkbox-container {
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+label.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+}
+
+label.checkbox-container .custom-checkbox {
+    width: 10px;
+    height: 10px;
+    background-color: #161616;
+    border: 1px solid #2121214b;
+    margin-right: 6px;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+label.checkbox-container input:checked ~ .custom-checkbox {
+    background-color: #537ccf;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.slider-container input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    outline: none;
+}
+
+.slider-container input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0;
+    height: 0;
+    background: transparent;
+}
+
+.slider-container input[type="range"]::-moz-range-thumb {
+    width: 0;
+    height: 0;
+    background: transparent;
+    border: none;
+}
+
+.slider-container span {
+    width: 30px;
+    text-align: right;
+    color: #ccc;
+}
+
+select {
+    background-color: #222;
+    border: 1px solid #444;
+    color: #ccc;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+
+
+button {
+    width: 100px;
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    color: #ccc;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    -webkit-app-region: no-drag;
+}
+
+button:hover {
+    background-color: #2a2a2a;
+    border-color: #444;
+    color: #fff;
+}
+
+button:active {
+    background-color: #333;
+    border-color: #555;
+}
