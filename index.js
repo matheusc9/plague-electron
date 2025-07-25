@@ -10,8 +10,8 @@ const createWindow = () => {
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     },
-    transparent: false, // false se quiser cor opaca
-    roundedCorners: false, // <-- ESSENCIAL para alguns casos no Windows 11
+    transparent: false,
+    roundedCorners: false,
   });
 
   win.loadFile('index.html');
